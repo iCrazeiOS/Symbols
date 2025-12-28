@@ -60,6 +60,9 @@
 		self.listData = results;
 	}
 	[self.tableView reloadData];
+
+	// Hide transparent overlay view that steals touch events from table while searching
+	self.presentedViewController.view.superview.hidden = YES;
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
