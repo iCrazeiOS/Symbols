@@ -1,2 +1,7 @@
 #!/bin/bash
-uicache
+
+if [ -L /var/jb ]; then
+	uicache -p /var/jb/Applications/Symbols.app
+else
+	uicache -p /Applications/Symbols.app
+fi

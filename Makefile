@@ -3,6 +3,8 @@ ARCHS = arm64 arm64e
 
 include $(THEOS)/makefiles/common.mk
 
+INSTALL_TARGET_PROCESSES = Symbols
+
 APPLICATION_NAME = Symbols
 Symbols_FILES = $(wildcard *.m)
 Symbols_FRAMEWORKS = UIKit CoreGraphics
@@ -13,6 +15,3 @@ include $(THEOS_MAKE_PATH)/application.mk
 
 before-stage::
 	find . -name ".DS_Store" -delete
-
-after-install::
-	install.exec "uicache; killall -9 Symbols"
